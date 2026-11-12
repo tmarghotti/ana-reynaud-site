@@ -1,0 +1,10 @@
+---
+import { services } from '../data/siteContent';
+import ServiceCard from './ServiceCard.astro';
+---
+<section class="light" id="servicos">
+  <div class="wrap">
+    <div class="head"><h2>Serviços</h2><p class="mut">Escolha um serviço para ver os trabalhos ou consultar valores e disponibilidade.</p></div>
+    <div class="grid">{services.map((s) => <ServiceCard name={s.name} category={s.category} cover={s.cover} coverAlt={s.coverAlt} />)}</div>
+  </div>
+</section>

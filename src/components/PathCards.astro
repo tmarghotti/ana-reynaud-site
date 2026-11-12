@@ -1,0 +1,17 @@
+---
+import { paths } from '../data/siteContent';
+---
+<section class="dark2">
+  <div class="wrap">
+    <div class="head"><h2>Dois caminhos, um mesmo cuidado.</h2></div>
+    <div class="paths">
+      {paths.map((p, i) => (
+        <article class="path">
+          <img class={p.contain ? 'cert' : undefined} src={p.image.src} alt={p.image.alt} loading="lazy" />
+          <h3>{p.title}</h3><p>{p.text}</p>
+          <div><a class={i === 0 ? 'btn' : 'btn ghost'} href={p.href}>{p.cta}</a></div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

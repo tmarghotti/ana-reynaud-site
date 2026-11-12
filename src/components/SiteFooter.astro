@@ -1,0 +1,10 @@
+---
+import { nav, site, contact } from '../data/siteContent';
+---
+<footer>
+  <div class="wrap">
+    <span class="brand">{site.name}</span>
+    <ul>{nav.filter((n) => n.href !== '#inicio').map((n) => <li><a href={n.href}>{n.label}</a></li>)}</ul>
+    <span>{contact.city}</span>
+  </div>
+</footer>

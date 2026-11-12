@@ -1,0 +1,13 @@
+---
+import { nav, site } from '../data/siteContent';
+import { messages } from '../data/siteContent';
+import WhatsAppCta from './WhatsAppCta.astro';
+---
+<header>
+  <a class="brand" href="#inicio">{site.name}</a>
+  <nav id="nav" aria-label="Principal">
+    <ul>{nav.map((n) => <li><a href={n.href}>{n.label}</a></li>)}</ul>
+  </nav>
+  <WhatsAppCta class="btn hcta" message={messages.services}>Agendar pelo WhatsApp</WhatsAppCta>
+  <button class="menu" id="mb" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu">☰</button>
+</header>

@@ -1,0 +1,14 @@
+---
+import type { GalleryItem } from '../data/siteContent';
+interface Props { id: string; items: GalleryItem[] }
+const { id, items } = Astro.props;
+---
+<div class="mas" id={id}>
+  {items.map((i) => (
+    <figure data-cat={i.category}>
+      <img src={i.src} alt={i.alt} width={i.width} height={i.height} loading="lazy" decoding="async" />
+      {i.badge && <span class="bd">{i.badge}</span>}
+      {i.caption && <figcaption>{i.caption}</figcaption>}
+    </figure>
+  ))}
+</div>

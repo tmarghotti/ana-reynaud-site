@@ -1,0 +1,35 @@
+---
+import { courseFormat as f, courses, courseGallery, messages } from '../data/siteContent';
+import WhatsAppCta from './WhatsAppCta.astro';
+import GalleryGrid from './GalleryGrid.astro';
+---
+<section class="gsec" id="curso">
+  <div class="wrap">
+    <div class="head"><h2>Cursos individuais</h2><p class="mut">Aulas individuais, com acompanhamento da Ana e suporte pelo WhatsApp depois do curso.</p></div>
+    <h3 class="sub">{f.title}</h3>
+    <div class="tl">
+      <div><b>{f.steps[0].label}</b><p>{f.steps[0].text}</p></div>
+      <span class="ar" aria-hidden="true">→</span>
+      <div><b>{f.steps[1].label}</b><p>{f.steps[1].text}</p></div>
+    </div>
+    <div class="pil">{f.pillars.map((p) => <div><b>{p.title}</b><span>{p.text}</span></div>)}</div>
+    <div class="lrn">
+      <div><h4>Você vai aprender</h4><ul>{f.learn.map((l) => <li>{l}</li>)}</ul></div>
+      <div class="bonus"><b>Bônus</b><p>{f.bonus}</p></div>
+    </div>
+    <h3 class="sub">Cursos oferecidos</h3>
+    <ul class="crs">
+      {courses.map((c) => (
+        <li>
+          <b>{c.name}</b><span>Individual, com acompanhamento da Ana</span>
+          {c.hours && <span>{c.hours}</span>}
+          <WhatsAppCta class="cl" message={messages.courseNamed(c.name)}>Pedir informações</WhatsAppCta>
+        </li>
+      ))}
+    </ul>
+    <p class="mut" style="margin:0 0 22px">Valores, datas e condições de pagamento são combinados direto pelo WhatsApp.</p>
+    <WhatsAppCta class="btn gold" message={messages.course}>Quero informações sobre o curso</WhatsAppCta>
+    <h3 class="sub" style="margin-top:64px">Formação na prática</h3>
+    <GalleryGrid id="cg" items={courseGallery} />
+  </div>
+</section>

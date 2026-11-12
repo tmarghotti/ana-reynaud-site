@@ -1,0 +1,17 @@
+---
+import { messages } from '../data/siteContent';
+import WhatsAppCta from './WhatsAppCta.astro';
+interface Props { name: string; category: string; cover: string; coverAlt: string }
+const { name, category, cover, coverAlt } = Astro.props;
+---
+<article class="card">
+  <img src={cover} alt={coverAlt} loading="lazy" />
+  <div class="b">
+    <h3>{name}</h3>
+    <p>Valores e disponibilidade pelo WhatsApp.</p>
+    <div class="acts">
+      <a class="l" href="#portfolio" data-f={category}>Ver trabalhos</a>
+      <WhatsAppCta class="l" message={messages.service(name)}>Consultar valores</WhatsAppCta>
+    </div>
+  </div>
+</article>

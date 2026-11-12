@@ -1,0 +1,6 @@
+---
+import { waLink } from '../lib/whatsapp';
+interface Props { message: string; class?: string }
+const { message, class: cls = 'btn' } = Astro.props;
+---
+<a class={cls} href={waLink(message)} target="_blank" rel="noopener noreferrer"><slot /></a>

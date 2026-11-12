@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import Hero from '../components/Hero.astro';
+import PathCards from '../components/PathCards.astro';
+import Services from '../components/Services.astro';
+import Portfolio from '../components/Portfolio.astro';
+import CourseSection from '../components/CourseSection.astro';
+import About from '../components/About.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Contact from '../components/Contact.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Lightbox from '../components/Lightbox.astro';
+---
+<BaseLayout>
+  <SiteHeader />
+  <main>
+    <Hero />
+    <PathCards />
+    <Services />
+    <Portfolio />
+    <CourseSection />
+    <About />
+    <Testimonials />
+    <Contact />
+  </main>
+  <SiteFooter />
+  <Lightbox />
+</BaseLayout>

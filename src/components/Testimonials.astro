@@ -1,0 +1,9 @@
+---
+import { testimonials } from '../data/siteContent';
+---
+<section>
+  <div class="wrap">
+    <div class="head"><h2>Quem já passou por aqui</h2><p class="mut">Mensagens recebidas de clientes e alunas.</p></div>
+    <div class="q">{testimonials.map((t) => <blockquote><p>“{t}”</p></blockquote>)}</div>
+  </div>
+</section>

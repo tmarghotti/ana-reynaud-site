@@ -1,0 +1,14 @@
+---
+import { hero } from '../data/siteContent';
+---
+<section class="hh" id="inicio">
+  <div class="hp"><img src={hero.portrait.src} alt={hero.portrait.alt} width={hero.portrait.width} height={hero.portrait.height} fetchpriority="high" decoding="async" /></div>
+  <div class="hx">
+    <svg class="alm" viewBox="0 0 60 120" aria-hidden="true"><path d="M30 2C46 26 53 62 30 118 7 62 14 26 30 2Z" fill="none" stroke="#B99A5B" stroke-width="1.2" /></svg>
+    <p class="eb">{hero.eyebrow}</p>
+    <h1>{hero.title}</h1>
+    <p class="t">{hero.text}</p>
+    <div class="row"><a class="btn" href="#servicos">Conhecer serviços</a><a class="btn ghost" href="#curso">Conhecer o curso</a></div>
+  </div>
+  <div class="hn"><img src={hero.nails.src} alt={hero.nails.alt} width={hero.nails.width} height={hero.nails.height} decoding="async" /></div>
+</section>

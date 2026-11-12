@@ -1,0 +1,13 @@
+---
+import { gallery, galleryFilters } from '../data/siteContent';
+import GalleryGrid from './GalleryGrid.astro';
+---
+<section id="portfolio">
+  <div class="wrap">
+    <div class="head"><h2>Portfólio</h2><p class="mut">Trabalhos reais realizados no estúdio. Toque numa foto para ampliar.</p></div>
+    <div class="bar" id="bar">
+      {galleryFilters.map((f) => <button type="button" data-f={f.id} aria-pressed={f.id === 'todos' ? 'true' : 'false'}>{f.label}</button>)}
+    </div>
+    <GalleryGrid id="g" items={gallery} />
+  </div>
+</section>

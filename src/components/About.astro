@@ -1,0 +1,13 @@
+---
+import { about } from '../data/siteContent';
+---
+<section class="champ" id="sobre">
+  <div class="wrap about">
+    <img src={about.image.src} alt={about.image.alt} width={about.image.width} height={about.image.height} loading="lazy" />
+    <div>
+      <h2>{about.title}</h2>
+      {about.paragraphs.map((p) => <p>{p}</p>)}
+      <div class="sig" aria-hidden="true">Ana Rëynaud</div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+---
+import { contact, messages } from '../data/siteContent';
+import WhatsAppCta from './WhatsAppCta.astro';
+---
+<section class="light contact" id="contato">
+  <div class="wrap">
+    <h2>Vamos conversar?</h2>
+    <p class="mut">Atendimento e cursos com hora marcada. Escolha o assunto e siga para o WhatsApp.</p>
+    <div class="row">
+      <WhatsAppCta message={messages.services}>Agendar um serviço</WhatsAppCta>
+      <WhatsAppCta class="btn ghost" message={messages.course}>Informações do curso</WhatsAppCta>
+    </div>
+    <div class="ct">
+      <a href={contact.instagramUrl} target="_blank" rel="noopener noreferrer">@{contact.instagramHandle}</a>
+      <span>{contact.address}</span>
+      <span>{contact.hours}</span>
+    </div>
+  </div>
+</section>
